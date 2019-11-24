@@ -53,7 +53,6 @@ PySocks==1.7.0
 pyttsx==1.1
 pyttsx3==2.71
 pytz==2019.1
-pywin32==225
 pywin32-ctypes==0.2.0
 pyzabbix==0.7.5
 requests==2.22.0
