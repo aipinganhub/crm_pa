@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/static/bootstrap/css/bootstrap.css">
+    <script src="/static/js/jquery-1.12.4.min.js"></script>
+    <script src="/static/Highcharts-7.2.1/code/highcharts.js"></script>
+
+</head>
+<body>
+<h3>{{ student_obj }}的成绩</h3>
+<div class="container">
+    <div class="row">
+        <div class="col-md-10 col-md-offset-1">
+            <table class="table-bordered table table-striped">
+                <thead>
+                <tr>
+                    <th>班级</th>
+                    <th>班主任</th>
+                    <th>任课老师</th>
+                    <th>课程成绩</th>
+                </tr>
+                </thead>
+                <tbody>
+                {% for class in class_list %}
+                    <tr>
+                        <td>{{ class.course }}</td>
+                        <td>{{ class.tutor.name }}</td>
+                        <td>{% for teacher in class.teachers.all %}
+                            <span>{{ teacher }}</span>,
+                        {% endfor %}
+                        </td>
+                        <td><a class="check_chart" class_id="{{ class.pk }}" student_id="{{ studentId }}">查看成绩</a></td>
+                    </tr>
+                {% endfor %}
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+    {#    柱状图#}
+    <div id="container" class=" col-md-10 col-md-offset-1" ></div>
+</div>
+<script>
+    $(".check_chart").click(function () {
+        $.ajax({
+            url: "",
+            type: "get",
+            data: {
+                class_id: $(this).attr("class_id"),
+                student_id: $(this).attr("student_id")
+            },
+            success: function (data) {
+                //显示柱状图
+
+                var chart = Highcharts.chart('container', {
+                    chart: {
+                        type: 'column'
+                    },
+                    title: {
+                        text: '查看成绩'
+                    },
+                    subtitle: {
+                        text: '每日的学习情况'
+                    },
+                    xAxis: {
+                        categories: data["day_list"],
+                        title: {
+                                text: '天数'
+                                }
+                    },
+                    yAxis: {
+                        labels: {
+                            x: -45
+                        },
+                        title: {
+                            text: '分数'
+                        }
+                    },
+                    series: [{
+                        name: '得分',
+                        data: data["num_list"]
+                    }],
+                    responsive: {
+                        rules: [{
+                            condition: {
+                                maxWidth: 400
+                            },
+                            // Make the labels less space demanding on mobile
+                            chartOptions: {
+                                xAxis: {
+                                    labels: {
+                                        formatter: function () {
+                                            return this.value.replace('月', '')
+                                        }
+                                    }
+                                },
+                                yAxis: {
+                                    labels: {
+                                        align: 'left',
+                                        x: 0,
+                                        y: -2
+                                    },
+                                    title: {
+                                        text: ''
+                                    }
+                                }
+                            }
+                        }]
+                    }
+                });
+
+                function setSize(width) {
+                    chart.setSize(width, 300);
+                }
+
+
+            }
+        })
+    })
+</script>
+</body>
+</html>

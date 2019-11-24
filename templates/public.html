@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/static/bootstrap/css/bootstrap.css">
+    <script src="/static/js/jquery-1.12.4.min.js"></script>
+
+</head>
+<body>
+<h3>公共客户资源</h3>
+<div class="container">
+    <div class="row">
+        <div class="col-md-10 col-md-offset-1">
+            <table class="table table-bordered table-striped">
+                <thead>
+                <th>序号</th>
+                <th>客户名称</th>
+                <th>QQ</th>
+                <th>课程顾问</th>
+                <th>跟进记录</th>
+                <th>开始跟进</th>
+
+                </thead>
+                <tbody>
+
+                {% for customer in customer_list %}
+                    <tr>
+                        <td>{{ forloop.counter }}</td>
+                        <td>{{ customer.name }}</td>
+                        <td>{{ customer.qq }}</td>
+                        <td>{{ customer.consultant }}</td>
+                        <td><a href="/stark/crm/consultrecord/?customer={{ customer.pk }}">跟进记录</a></td>
+                    <td><a href="">开始跟进</a></td>
+                    </tr>
+                {% endfor %}
+
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
