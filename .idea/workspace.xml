@@ -1,7 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="f1b3fcb0-e922-40ba-91c4-02705698a6f3" name="默认的" comment="" />
+    <list default="true" id="f1b3fcb0-e922-40ba-91c4-02705698a6f3" name="默认的" comment="">
+      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/.gitignore" />
+      <change beforePath="$PROJECT_DIR$/.idea/crm_pa.iml" afterPath="$PROJECT_DIR$/.idea/crm_pa.iml" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" />
+      <change beforePath="$PROJECT_DIR$/requirements.txt" afterPath="$PROJECT_DIR$/requirements.txt" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -119,11 +124,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="README.md" pinned="false" current-in-tab="true">
+      <file leaf-file-name="README.md" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/README.md">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="72">
               <caret line="3" column="0" lean-forward="true" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="requirements.txt" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/requirements.txt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="358">
+              <caret line="55" column="7" lean-forward="false" selection-start-line="55" selection-start-column="7" selection-end-line="55" selection-end-column="7" />
               <folding />
             </state>
           </provider>
@@ -218,11 +233,6 @@
             <path>
               <item name="crm_pa" type="b2602c69:ProjectViewProjectNode" />
               <item name="crm_pa" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="crm_pa" type="b2602c69:ProjectViewProjectNode" />
-              <item name="crm_pa" type="462c0819:PsiDirectoryNode" />
-              <item name="crm" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="crm_pa" type="b2602c69:ProjectViewProjectNode" />
@@ -823,18 +833,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/requirements.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="14" lean-forward="true" selection-start-line="0" selection-start-column="14" selection-end-line="0" selection-end-column="14" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="72">
           <caret line="3" column="0" lean-forward="true" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/requirements.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="358">
+          <caret line="55" column="7" lean-forward="false" selection-start-line="55" selection-start-column="7" selection-end-line="55" selection-end-column="7" />
           <folding />
         </state>
       </provider>
